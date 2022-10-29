@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>代码设计模式之代理模式</h1>
+    <script>
+        document.write('廖骏涛')
+    // 对象字面量 描述功能 强大表现力
+    // 对象由属性和方法构成
+
+        let ljt = {
+            name:'廖骏涛',
+            age:20,
+            hometown:'赣州',
+            isSingle:false,
+            dream:'赚大钱',
+            // 形参
+            sendFlower(o){
+                // o.receiveFlower()
+                o.receiveFlower(this)
+            }  
+        }
+        let xm = {
+            name:'小美',
+            age:18,
+            hometown:'南昌',
+            room:'201',
+            receiveFlower(o){
+                console.log(`${this.name}收到了${o.name}送的花`)
+            }
+        }
+        //代理模式
+        let xh = {
+            name:'小红',
+            age:18,
+            hometown:'赣州',
+            room:'201',
+            //接口 当不同的对象，具有相同的方法时，可以互换使用
+            receiveFlower(o){
+                // if(o.name==='廖骏涛'){
+                //     console.log('让我们在一起吧...')
+                //     else{
+                        // xm.receiveFlower(o)
+                //     }
+                // }
+                // 定时器
+                setTimeout(function() {
+                    xm.xq = 95;
+                    xm.receiveFlower(0)
+                }, 10000);
+            }
+        }
+        ljt.sendFlower(xh)
+    </script>
+</body>
+</html>
