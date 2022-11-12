@@ -1,0 +1,8 @@
+<!-- 写页面结构的地方 -->
+<!-- view 相当于div -->
+<view class="container">
+  <navigator url="/pages/didi/index">
+    <text class="title">{{title}}</text>
+  </navigator>
+  <image class="car" src="{{car}}" />
+</view>
